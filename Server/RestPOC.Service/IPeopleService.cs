@@ -1,15 +1,17 @@
 ﻿namespace RestPOC.Service
 {
-    using System.Collections.Generic;
-
     using RestPOC.Domain;
 
     public interface IPeopleService {
-        OperationResult AddNewUser(Person person);
-        OperationResult UpdateUser(Person person);
 
+        // User Role
+        OperationResult AddNewUser(Person person);
+        // User Role
+        OperationResult UpdateUser(Person person);
+        // User Role
         OperationResult<Person> GetById(int personId);
 
+        // SuperUser Role
         OperationResult<PaginatedList<Person>> GetAll(int pageIndex, int pageSize);
     }
 }

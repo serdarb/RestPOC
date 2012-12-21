@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestPOC.API.Routing;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,8 +16,9 @@ namespace RestPOC.API.Config {
 
             routes.MapHttpRoute(
                 "DefaultHttpRoute",
-                "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional });
+                "api/{apikey}/{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional },
+                constraints: new { apikey = new GuidRouteConstraint() });
         }
     }
 }

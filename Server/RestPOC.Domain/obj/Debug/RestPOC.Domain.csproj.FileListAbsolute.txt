@@ -1,0 +1,10 @@
+C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Domain\bin\Debug\RestPOC.Domain.dll.config
+C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Domain\bin\Debug\RestPOC.Domain.dll
+C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Domain\bin\Debug\RestPOC.Domain.pdb
+C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Domain\bin\Debug\EntityFramework.dll
+C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Domain\bin\Debug\EntityFramework.xml
+C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Domain\obj\Debug\RestPOC.Domain.dll
+C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Domain\obj\Debug\RestPOC.Domain.pdb
+C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Domain\obj\Debug\RestPOC.Domain.csprojResolveAssemblyReference.cache
+C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Domain\obj\Debug\RestPOC.Domain.Migrations.InitialCreate.resources
+C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Domain\obj\Debug\RestPOC.Domain.csproj.GenerateResource.Cache

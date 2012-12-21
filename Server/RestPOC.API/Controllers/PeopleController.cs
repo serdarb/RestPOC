@@ -4,54 +4,52 @@ using RestPOC.API.Model.RequestCommands;
 using RestPOC.API.Model.RequestModels;
 using RestPOC.Domain;
 using RestPOC.Service;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+
 using System.Net;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace RestPOC.API.Controllers {
-   
-    public class PeopleController : ApiController {
-
-        private readonly IPeopleService _peopleService;
-
-        public PeopleController(IPeopleService peopleService) {
-
-            _peopleService = peopleService;
+namespace RestPOC.API.Controllers
+{
+    public class PeopleController : ApiController
+    {
+        private readonly IPeopleService peopleService;
+        public PeopleController(IPeopleService peopleService)
+        {
+            this.peopleService = peopleService;
         }
 
-        public PaginatedDto<PersonDto> GetPeople(PaginatedRequestCommand cmd) {
-
-            OperationResult<PaginatedList<Person>> peopleResult = _peopleService.GetAll(cmd.Page, cmd.Take);
-            if (!peopleResult.IsOK) {
-
+        [Authorize(Users = "superuser")]
+        public PaginatedDto<PersonDto> GetPeople(PaginatedRequestCommand cmd)
+        {
+            var peopleResult = this.peopleService.GetAll(cmd.PageIndex, cmd.PageSize);
+            if (!peopleResult.IsOK)
+            {
                 throw new HttpResponseException(HttpStatusCode.InternalServerError);
             }
 
             return Mapper.Map<PaginatedList<Person>, PaginatedDto<PersonDto>>(peopleResult.Result);
         }
 
-        public PersonDto GetPerson(int id) {
+        public PersonDto GetPerson(int id)
+        {
+            var personResult = this.peopleService.GetById(id);
 
-            OperationResult<Person> personResult = _peopleService.GetById(id);
-            if (!personResult.IsOK) {
-
-                throw new HttpResponseException(HttpStatusCode.InternalServerError);
+            if (!personResult.IsOK || personResult.Result == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
             return Mapper.Map<Person, PersonDto>(personResult.Result);
         }
 
-        public HttpResponseMessage PostPerson(PersonRequestModel requestModel) {
-
+        [Authorize]
+        public HttpResponseMessage PostPerson(PersonRequestModel requestModel)
+        {
             var person = Mapper.Map<PersonRequestModel, Person>(requestModel);
-            OperationResult<Person> personResult = _peopleService.AddNewUser(person);
-            if (!personResult.IsOK) {
-
+            var personResult = this.peopleService.AddNewUser(person);
+            if (!personResult.IsOK)
+            {
                 return new HttpResponseMessage(HttpStatusCode.InternalServerError);
             }
 
@@ -59,12 +57,13 @@ namespace RestPOC.API.Controllers {
             return Request.CreateResponse(HttpStatusCode.Created, personDto);
         }
 
-        public PersonDto PutPerson(int id, PersonRequestModel requestModel) {
-
+        [Authorize]
+        public PersonDto PutPerson(int id, PersonRequestModel requestModel)
+        {
             var person = Mapper.Map<PersonRequestModel, Person>(requestModel);
-            OperationResult<Person> personResult = _peopleService.UpdateUser(person);
-            if (!personResult.IsOK) {
-
+            var personResult = this.peopleService.UpdateUser(person);
+            if (!personResult.IsOK)
+            {
                 throw new HttpResponseException(HttpStatusCode.InternalServerError);
             }
 

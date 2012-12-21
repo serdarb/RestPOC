@@ -1,4 +1,5 @@
 ﻿using RestPOC.API.Formatting;
+using RestPOC.API.MessageHandlers;
 using RestPOC.API.Model.RequestCommands;
 using System.Linq;
 using System.Net.Http.Formatting;
@@ -9,19 +10,20 @@ using System.Web.Http.Validation.Providers;
 using WebAPIDoodle.Filters;
 using WebAPIDoodle.Http;
 
-namespace RestPOC.API.Config {
-
-    public static class WebAPIConfig {
-
-        public static void Configure(HttpConfiguration config) {
-
+namespace RestPOC.API.Config
+{
+    public static class WebAPIConfig
+    {
+        public static void Configure(HttpConfiguration config)
+        {
             Configure(config, true);
         }
 
-        public static void Configure(HttpConfiguration config, bool registerTracer) {
-
+        public static void Configure(HttpConfiguration config, bool registerTracer)
+        {
             // Message Handlers
             config.MessageHandlers.Add(new RequireHttpsMessageHandler());
+            config.MessageHandlers.Add(new BasicAuthMessageHandler());
 
             // Formatters
             ConfigureFormatters(config.Formatters);
@@ -51,17 +53,17 @@ namespace RestPOC.API.Config {
                     ? new FromUriAttribute().GetBinding(descriptor) : null);
         }
 
-        private static void ConfigureFormatters(MediaTypeFormatterCollection formatters) {
-
-            // Remove unnecessary formatters
-            MediaTypeFormatter jqueryFormatter = formatters.FirstOrDefault(x => x.GetType() == typeof(JQueryMvcFormUrlEncodedFormatter));
-            formatters.Remove(formatters.XmlFormatter);
+        private static void ConfigureFormatters(MediaTypeFormatterCollection formatters)
+        {
+            // Remove unnecessary formatters for demo purposes
+            var jqueryFormatter = formatters.FirstOrDefault(x => x.GetType() == typeof(JQueryMvcFormUrlEncodedFormatter));
+            // formatters.Remove(formatters.XmlFormatter);
             formatters.Remove(formatters.FormUrlEncodedFormatter);
             formatters.Remove(jqueryFormatter);
 
             // Suppressing the IRequiredMemberSelector for all formatters
-            foreach (var formatter in formatters) {
-
+            foreach (var formatter in formatters)
+            {
                 formatter.RequiredMemberSelector = new SuppressedRequiredMemberSelector();
             }
         }

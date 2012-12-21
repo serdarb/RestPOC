@@ -1,16 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace RestPOC.API.Model.RequestModels
+{
+    using System.ComponentModel.DataAnnotations;
 
-namespace RestPOC.API.Model.RequestModels {
-    
-    public class PersonRequestModel {
-
+    public class PersonRequestModel
+    {
+        [Required, StringLength(50)]
         public string Name { get; set; }
+        
+        [Required, EmailAddress]
         public string Email { get; set; }
+        
         public string Telephone { get; set; }
         public int BirthYear { get; set; }
+
+        // For Demo Purposes ...
+        [CreditCard]
+        public string CreditCard { get; set; }
     }
 }

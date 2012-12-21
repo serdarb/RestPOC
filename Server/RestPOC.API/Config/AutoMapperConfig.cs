@@ -2,11 +2,8 @@
 using RestPOC.API.Model.Dtos;
 using RestPOC.API.Model.RequestModels;
 using RestPOC.Domain;
-using System;
-using System.Collections.Generic;
+
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RestPOC.API.Config {
     

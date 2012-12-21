@@ -4,12 +4,14 @@
 
     public interface IPeopleService {
 
+        // EveryOne
+        OperationResult<Person> GetById(int personId);
+
         // User Role
         OperationResult<Person> AddNewUser(Person person);
         // User Role
         OperationResult<Person> UpdateUser(Person person);
-        // User Role
-        OperationResult<Person> GetById(int personId);
+        
 
         // SuperUser Role
         OperationResult<PaginatedList<Person>> GetAll(int pageIndex, int pageSize);

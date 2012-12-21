@@ -61,6 +61,10 @@
     <Compile Include="Migrations\201212212051129_ApiKey.Designer.cs">
       <DependentUpon>201212212051129_ApiKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201212212138015_DemoDataUpdate.cs" />
+    <Compile Include="Migrations\201212212138015_DemoDataUpdate.Designer.cs">
+      <DependentUpon>201212212138015_DemoDataUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PaginatedList.cs" />
     <Compile Include="PeopleDB.cs" />
@@ -80,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201212212051129_ApiKey.resx">
       <DependentUpon>201212212051129_ApiKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201212212138015_DemoDataUpdate.resx">
+      <DependentUpon>201212212138015_DemoDataUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

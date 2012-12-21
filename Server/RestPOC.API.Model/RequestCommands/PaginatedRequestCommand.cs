@@ -5,10 +5,10 @@ namespace RestPOC.API.Model.RequestCommands {
     public class PaginatedRequestCommand : IRequestCommand {
 
         [Minimum(1)]
-        public int Page { get; set; }
+        public int PageIndex { get; set; }
 
         [Minimum(1)]
         [Maximum(50)]
-        public int Take { get; set; }
+        public int PageSize { get; set; }
     }
 }

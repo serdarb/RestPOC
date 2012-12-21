@@ -1,0 +1,17 @@
+
+/v1/people/1
+/v1/people?pagesize=2&pageindex=1
+
+
+user auth headers
+
+Accept: application/xml
+Authorization:Basic dXNlcjpwYXNzd29yZA==
+X-APIKey:apikeyforuser
+
+
+superuser auth headers
+
+Accept: application/json
+Authorization:Basic c3VwZXJ1c2VyOnBhc3N3b3Jk
+X-APIKey:apikeyforsuperuser

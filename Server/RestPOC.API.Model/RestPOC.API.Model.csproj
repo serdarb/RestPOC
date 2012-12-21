@@ -45,14 +45,14 @@
     <Compile Include="Dtos\PaginatedDto.cs" />
     <Compile Include="Dtos\PersonDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RequestModels\IRequestCommand.cs" />
-    <Compile Include="RequestModels\PaginatedRequestCommand.cs" />
+    <Compile Include="RequestCommands\IRequestCommand.cs" />
+    <Compile Include="RequestCommands\PaginatedRequestCommand.cs" />
+    <Compile Include="RequestModels\PersonRequestModel.cs" />
+    <Compile Include="RequestModels\PersonUpdateRequestModel.cs" />
     <Compile Include="Validation\MaximumAttribute.cs" />
     <Compile Include="Validation\MinimumAttribute.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="RequestCommands\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,5 +1,5 @@
 ﻿using RestPOC.API.Formatting;
-using RestPOC.API.Model.RequestModels;
+using RestPOC.API.Model.RequestCommands;
 using System.Linq;
 using System.Net.Http.Formatting;
 using System.Web.Http;

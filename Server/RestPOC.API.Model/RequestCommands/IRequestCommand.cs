@@ -1,5 +1,5 @@
 ﻿
-namespace RestPOC.API.Model.RequestModels {
+namespace RestPOC.API.Model.RequestCommands {
     
     public class IRequestCommand {
 

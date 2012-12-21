@@ -1,6 +1,6 @@
 ﻿using RestPOC.API.Model.Validation;
 
-namespace RestPOC.API.Model.RequestModels {
+namespace RestPOC.API.Model.RequestCommands {
 
     public class PaginatedRequestCommand : IRequestCommand {
 

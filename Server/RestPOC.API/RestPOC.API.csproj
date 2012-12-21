@@ -11,6 +11,8 @@
     <AssemblyName>RestPOC.API</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -60,8 +62,13 @@
       <Project>{7d20f809-40cc-4439-8b3a-23877c32144b}</Project>
       <Name>RestPOC.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RestPOC.Service\RestPOC.Service.csproj">
+      <Project>{9787074b-d565-46d5-91c5-2017aef5a600}</Project>
+      <Name>RestPOC.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

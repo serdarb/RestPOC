@@ -1,9 +1,0 @@
-C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Service\obj\Debug\RestPOC.Service.csprojResolveAssemblyReference.cache
-C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Service\bin\Debug\RestPOC.Service.dll
-C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Service\bin\Debug\RestPOC.Service.pdb
-C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Service\bin\Debug\RestPOC.Domain.dll
-C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Service\bin\Debug\EntityFramework.dll
-C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Service\bin\Debug\RestPOC.Domain.pdb
-C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Service\bin\Debug\EntityFramework.xml
-C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Service\obj\Debug\RestPOC.Service.dll
-C:\Work\Serdar\Something\RestPOC\Server\RestPOC.Service\obj\Debug\RestPOC.Service.pdb

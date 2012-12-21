@@ -51,13 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RestPOC.API.Model\RestPOC.API.Model.csproj">
+      <Project>{7572caa4-c53d-42b7-9c19-f5e1f3093dda}</Project>
+      <Name>RestPOC.API.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RestPOC.Domain\RestPOC.Domain.csproj">
       <Project>{7d20f809-40cc-4439-8b3a-23877c32144b}</Project>
       <Name>RestPOC.Domain</Name>
@@ -66,6 +69,11 @@
       <Project>{9787074b-d565-46d5-91c5-2017aef5a600}</Project>
       <Name>RestPOC.Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="MessageHandlers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

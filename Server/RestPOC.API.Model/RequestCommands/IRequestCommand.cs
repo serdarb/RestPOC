@@ -1,7 +1,8 @@
 ﻿
-namespace RestPOC.API.Model.RequestCommands {
-    
-    public class IRequestCommand {
+namespace RestPOC.API.Model.RequestCommands
+{
+    public interface IRequestCommand
+    {
 
     }
 }

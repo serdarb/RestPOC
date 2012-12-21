@@ -12,6 +12,5 @@
         public string Email { get; set; }
         public string Telephone { get; set; }
         public int BirthYear { get; set; }
-
     }
 }

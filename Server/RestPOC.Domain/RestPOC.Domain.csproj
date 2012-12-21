@@ -53,6 +53,10 @@
     <Compile Include="Migrations\201212211603575_InitialCreate.Designer.cs">
       <DependentUpon>201212211603575_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201212212023301_SecondChange.cs" />
+    <Compile Include="Migrations\201212212023301_SecondChange.Designer.cs">
+      <DependentUpon>201212212023301_SecondChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PaginatedList.cs" />
     <Compile Include="PeopleDB.cs" />
@@ -66,6 +70,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201212211603575_InitialCreate.resx">
       <DependentUpon>201212211603575_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201212212023301_SecondChange.resx">
+      <DependentUpon>201212212023301_SecondChange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -18,13 +18,13 @@
             this.repository = repository;
         }
 
-        public OperationResult AddNewUser(Person person)
+        public OperationResult<Person> AddNewUser(Person person)
         {
             try
             {
                 repository.Add(person);
                 repository.Save();
-                return new OperationResult<Person>(true);
+                return new OperationResult<Person>(true, person);
             }
             catch (Exception exception)
             {
@@ -34,13 +34,13 @@
             }
         }
 
-        public OperationResult UpdateUser(Person person)
+        public OperationResult<Person> UpdateUser(Person person)
         {
             try
             {
                 repository.Update(person);
                 repository.Save();
-                return new OperationResult<Person>(true);
+                return new OperationResult<Person>(true, person);
             }
             catch (Exception exception)
             {

@@ -5,9 +5,9 @@
     public interface IPeopleService {
 
         // User Role
-        OperationResult AddNewUser(Person person);
+        OperationResult<Person> AddNewUser(Person person);
         // User Role
-        OperationResult UpdateUser(Person person);
+        OperationResult<Person> UpdateUser(Person person);
         // User Role
         OperationResult<Person> GetById(int personId);
 

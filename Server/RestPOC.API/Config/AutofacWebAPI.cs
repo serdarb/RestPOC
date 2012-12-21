@@ -43,7 +43,7 @@ namespace RestPOC.API.Config {
 
             Type baseEntityType = typeof(IEntity);
             Assembly assembly = baseEntityType.Assembly;
-            IEnumerable<Type> entityTypes = assembly.GetTypes().Where(x => x.IsAssignableFrom(baseEntityType));
+            IEnumerable<Type> entityTypes = assembly.GetTypes().Where(x => baseEntityType.IsAssignableFrom(x) && x != baseEntityType);
             foreach (Type type in entityTypes) {
 
                 builder.RegisterType(typeof(EntityRepository<>).MakeGenericType(type)).As(typeof(IEntityRepository<>).MakeGenericType(type)).InstancePerApiRequest();

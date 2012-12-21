@@ -6,6 +6,8 @@ using System.Web.Http;
 using System.Web.Http.ModelBinding;
 using System.Web.Http.Validation;
 using System.Web.Http.Validation.Providers;
+using WebAPIDoodle.Filters;
+using WebAPIDoodle.Http;
 
 namespace RestPOC.API.Config {
 
@@ -19,11 +21,13 @@ namespace RestPOC.API.Config {
         public static void Configure(HttpConfiguration config, bool registerTracer) {
 
             // Message Handlers
+            config.MessageHandlers.Add(new RequireHttpsMessageHandler());
 
             // Formatters
             ConfigureFormatters(config.Formatters);
 
             // Filters
+            config.Filters.Add(new InvalidModelStateFilterAttribute());
 
             // Default Services
 

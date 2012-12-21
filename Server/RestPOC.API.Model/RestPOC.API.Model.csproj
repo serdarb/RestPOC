@@ -48,7 +48,6 @@
     <Compile Include="RequestCommands\IRequestCommand.cs" />
     <Compile Include="RequestCommands\PaginatedRequestCommand.cs" />
     <Compile Include="RequestModels\PersonRequestModel.cs" />
-    <Compile Include="RequestModels\PersonUpdateRequestModel.cs" />
     <Compile Include="Validation\MaximumAttribute.cs" />
     <Compile Include="Validation\MinimumAttribute.cs" />
   </ItemGroup>

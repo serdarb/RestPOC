@@ -1,6 +1,8 @@
 ﻿namespace RestPOC.Domain {
-    public interface IEntity
-    {
+    using System;
+
+    public interface IEntity {
         int Id { get; set; }
+        DateTime DeletedOn { get; set; }
     }
 }

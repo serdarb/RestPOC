@@ -7,15 +7,14 @@
         [Required, StringLength(50)]
         public string Name { get; set; }
         
-        //[Required, EmailAddress]
+        [Required, EmailAddress]
         public string Email { get; set; }
         
         public string Telephone { get; set; }
         public int BirthYear { get; set; }
 
         // For Demo Purposes ...
-        //
-        //[CreditCard]
+        [CreditCard]
         public string CreditCard { get; set; }
     }
 }

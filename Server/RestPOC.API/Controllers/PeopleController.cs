@@ -58,9 +58,10 @@ namespace RestPOC.API.Controllers
         }
 
         [Authorize]
-        public PersonDto PutPerson(int id, PersonRequestModel requestModel)
-        {
+        public PersonDto PutPerson(int id, PersonRequestModel requestModel) {
+            
             var person = Mapper.Map<PersonRequestModel, Person>(requestModel);
+            person.Id = id;
             var personResult = this.peopleService.UpdateUser(person);
             if (!personResult.IsOK)
             {

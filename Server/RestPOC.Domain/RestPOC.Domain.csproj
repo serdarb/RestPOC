@@ -51,7 +51,7 @@
     <Compile Include="EntityRepository.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IEntityRepository.cs" />
-    <Compile Include="IQueryableExtensions.cs" />
+    <Compile Include="QueryableExtensions.cs" />
     <Compile Include="Migrations\201212211603575_InitialCreate.cs" />
     <Compile Include="Migrations\201212211603575_InitialCreate.Designer.cs">
       <DependentUpon>201212211603575_InitialCreate.cs</DependentUpon>

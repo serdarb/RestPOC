@@ -73,7 +73,7 @@
         {
             get
             {
-                return this.Response.IsSuccessStatusCode;
+                return (Response != null) ? this.Response.IsSuccessStatusCode : false;
             }
         }
 

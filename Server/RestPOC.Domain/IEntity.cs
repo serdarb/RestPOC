@@ -3,6 +3,6 @@
 
     public interface IEntity {
         int Id { get; set; }
-        DateTime DeletedOn { get; set; }
+        Nullable<DateTime> DeletedOn { get; set; }
     }
 }

@@ -15,7 +15,7 @@
 
         public async Task<ActionResult> Index() {
             var response = await client.GetPerson(8);
-            return View("~/Views/HardCoded/Index.cshtml",response.Model);
+            return View("~/Views/HardCoded/Index.cshtml", response.Model);
         }
 
         public async Task<ActionResult> UserRole()

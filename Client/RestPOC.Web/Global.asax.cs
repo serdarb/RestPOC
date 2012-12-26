@@ -26,12 +26,13 @@
         {
             AreaRegistration.RegisterAllAreas();
 
-            WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            ApiClientContext = ApiClientContext.Create((cnf) =>cnf.SetCredentialsFromAppSetting("username", "password", "apikey").ConnectTo("http://localhost:44307/"));
+            ApiClientContext = ApiClientContext.Create((cnf) => 
+                cnf.SetCredentialsFromAppSetting("username", "password", "apikey")
+                   .ConnectTo("https://localhost:44307/"));
 
             BootstrapContainer();
         }

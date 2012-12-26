@@ -68,6 +68,10 @@
     <Compile Include="Migrations\201212212138015_DemoDataUpdate.Designer.cs">
       <DependentUpon>201212212138015_DemoDataUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201212260857393_deletedonmadenullable.cs" />
+    <Compile Include="Migrations\201212260857393_deletedonmadenullable.Designer.cs">
+      <DependentUpon>201212260857393_deletedonmadenullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PaginatedList.cs" />
     <Compile Include="PeopleDB.cs" />
@@ -90,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201212212138015_DemoDataUpdate.resx">
       <DependentUpon>201212212138015_DemoDataUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201212260857393_deletedonmadenullable.resx">
+      <DependentUpon>201212260857393_deletedonmadenullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

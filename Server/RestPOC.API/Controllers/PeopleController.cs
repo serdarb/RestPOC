@@ -19,7 +19,7 @@ namespace RestPOC.API.Controllers
             this.peopleService = peopleService;
         }
 
-        [Authorize(Users = "superuser")]
+        [Authorize(Users = "SuperUser")]
         public PaginatedDto<PersonDto> GetPeople(PaginatedRequestCommand cmd)
         {
             var peopleResult = this.peopleService.GetAll(cmd.PageIndex, cmd.PageSize);

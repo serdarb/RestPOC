@@ -7,7 +7,7 @@
     [EditorBrowsable(EditorBrowsableState.Never)]
     public static class ApiClientContextExtensions
     {
-        public static IPeopleClient GePeopleClient(this ApiClientContext apiClientContext)
+        public static IPeopleClient GetPeopleClient(this ApiClientContext apiClientContext)
         {
             return apiClientContext.GetClient<IPeopleClient>(() => new  PeopleClient(apiClientContext.HttpClient));
         }

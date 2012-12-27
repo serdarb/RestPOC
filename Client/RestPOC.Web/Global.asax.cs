@@ -76,7 +76,7 @@
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(Component.For<IPeopleClient>()
-                                        .Instance(MvcApplication.ApiClientContext.GePeopleClient())
+                                        .Instance(MvcApplication.ApiClientContext.GetPeopleClient())
                                         .LifestyleSingleton());
         }
     }

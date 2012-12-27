@@ -6,10 +6,10 @@
 
     public interface IPeopleClient
     {
-        Task<HttpApiResponseMessage<PaginatedDto<PersonDto>>> GetPeople(int pageIndex, int pageSize);
-        Task<HttpApiResponseMessage<PersonDto>> GetPerson(int personId);
+        Task<HttpApiResponseMessage<PaginatedDto<PersonDto>>> GetPeopleAsync(int pageIndex, int pageSize);
+        Task<HttpApiResponseMessage<PersonDto>> GetPersonAsync(int personId);
 
-        Task<HttpApiResponseMessage<PersonDto>> AddPerson(PersonRequestModel model);
-        Task<HttpApiResponseMessage<PersonDto>> UpdatePerson(int personId, PersonRequestModel model);
+        Task<HttpApiResponseMessage<PersonDto>> AddPersonAsync(PersonRequestModel model);
+        Task<HttpApiResponseMessage<PersonDto>> UpdatePersonAsync(int personId, PersonRequestModel model);
     }
 }

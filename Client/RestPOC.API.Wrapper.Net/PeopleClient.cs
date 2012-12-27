@@ -28,28 +28,28 @@
             _baseUri = httpClient.BaseAddress.ToString().TrimEnd('/').ToLowerInvariant();
         }
 
-        public Task<HttpApiResponseMessage<PaginatedDto<PersonDto>>> GetPeople(int pageIndex, int pageSize)
+        public Task<HttpApiResponseMessage<PaginatedDto<PersonDto>>> GetPeopleAsync(int pageIndex, int pageSize)
         {
             // https://localhost:44307/v1/people?pagesize=2&pageindex=1
             var requestUri = string.Format("{0}/v1/people?pagesize={1}&pageindex={2}", _baseUri, pageIndex, pageSize);
             return _httpClient.GetAsync(requestUri).GetHttpApiResponseAsync<PaginatedDto<PersonDto>>();
         }
 
-        public Task<HttpApiResponseMessage<PersonDto>> GetPerson(int personId)
+        public Task<HttpApiResponseMessage<PersonDto>> GetPersonAsync(int personId)
         {
             // https://localhost:44307/v1/people/8
             var requestUri = string.Format("{0}/v1/people/{1}", _baseUri, personId);
             return _httpClient.GetAsync(requestUri).GetHttpApiResponseAsync<PersonDto>();
         }
 
-        public Task<HttpApiResponseMessage<PersonDto>> AddPerson(PersonRequestModel model)
+        public Task<HttpApiResponseMessage<PersonDto>> AddPersonAsync(PersonRequestModel model)
         {
             // https://localhost:44307/v1/people
             var requestUri = string.Format("{0}/v1/people", _baseUri);
             return _httpClient.PostAsJsonAsync(requestUri, model).GetHttpApiResponseAsync<PersonDto>();
         }
 
-        public Task<HttpApiResponseMessage<PersonDto>> UpdatePerson(int personId, PersonRequestModel model)
+        public Task<HttpApiResponseMessage<PersonDto>> UpdatePersonAsync(int personId, PersonRequestModel model)
         {
             // https://localhost:44307/v1/people
             var requestUri = string.Format("{0}/v1/people/{1}", _baseUri, personId);

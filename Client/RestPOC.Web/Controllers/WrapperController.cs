@@ -5,36 +5,42 @@
 
     using RestPOC.API.Model.RequestModels;
     using RestPOC.API.Wrapper.Net;
+    using RestPOC.API.Model.Dtos;
 
-    public class WrapperController : Controller
-    {
-        private readonly IPeopleClient client;
-        public WrapperController(IPeopleClient client) {
-            this.client = client;
+    public class WrapperController : Controller {
+
+        private readonly IPeopleClient _peopleClient;
+        public WrapperController(IPeopleClient peopleClient) {
+
+            _peopleClient = peopleClient;
         }
 
         public async Task<ActionResult> Index() {
-            var response = await client.GetPerson(8);
-            return View("~/Views/HardCoded/Index.cshtml", response.Model);
+
+            HttpApiResponseMessage<PersonDto> apiResponse = await _peopleClient.GetPersonAsync(8);
+            return View("~/Views/HardCoded/Index.cshtml", apiResponse.Model);
         }
 
-        public async Task<ActionResult> UserRole()
-        {
-            var model = new PersonRequestModel
-            {
+        public async Task<ActionResult> UserRole() {
+
+            var model = new PersonRequestModel {
                 Name = "Updated Demo User 1",
                 Email = "email1@email.com",
                 BirthYear = 1982
             };
 
-            var response = await client.UpdatePerson(8, model);
-            return View("~/Views/HardCoded/UserRole.cshtml", response.Model);
+            HttpApiResponseMessage<PersonDto> apiResponse = 
+                await _peopleClient.UpdatePersonAsync(8, model);
+
+            return View("~/Views/HardCoded/UserRole.cshtml", apiResponse.Model);
         }
 
         public async Task<ActionResult> SuperUserRole() {
-            var response = await client.GetPeople(1, 5);
-            return View("~/Views/HardCoded/SuperUserRole.cshtml", response.Model);
-        }
 
+            HttpApiResponseMessage<PaginatedDto<PersonDto>> apiResponse = 
+                await _peopleClient.GetPeopleAsync(1, 5);
+
+            return View("~/Views/HardCoded/SuperUserRole.cshtml", apiResponse.Model);
+        }
     }
 }

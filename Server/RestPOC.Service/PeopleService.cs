@@ -1,7 +1,6 @@
 ﻿namespace RestPOC.Service
 {
     using System;
-    using System.Collections.Generic;
 
     using RestPOC.Domain;
 

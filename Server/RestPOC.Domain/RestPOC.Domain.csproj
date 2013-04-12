@@ -13,6 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
@@ -48,7 +51,7 @@
     <Compile Include="EntityRepository.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="IEntityRepository.cs" />
-    <Compile Include="IQueryableExtensions.cs" />
+    <Compile Include="QueryableExtensions.cs" />
     <Compile Include="Migrations\201212211603575_InitialCreate.cs" />
     <Compile Include="Migrations\201212211603575_InitialCreate.Designer.cs">
       <DependentUpon>201212211603575_InitialCreate.cs</DependentUpon>
@@ -64,6 +67,10 @@
     <Compile Include="Migrations\201212212138015_DemoDataUpdate.cs" />
     <Compile Include="Migrations\201212212138015_DemoDataUpdate.Designer.cs">
       <DependentUpon>201212212138015_DemoDataUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201212260857393_deletedonmadenullable.cs" />
+    <Compile Include="Migrations\201212260857393_deletedonmadenullable.Designer.cs">
+      <DependentUpon>201212260857393_deletedonmadenullable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PaginatedList.cs" />
@@ -87,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201212212138015_DemoDataUpdate.resx">
       <DependentUpon>201212212138015_DemoDataUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201212260857393_deletedonmadenullable.resx">
+      <DependentUpon>201212260857393_deletedonmadenullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

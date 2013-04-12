@@ -19,7 +19,7 @@ namespace RestPOC.API.Controllers
             this.peopleService = peopleService;
         }
 
-        [Authorize(Users = "superuser")]
+        [Authorize(Users = "SuperUser")]
         public PaginatedDto<PersonDto> GetPeople(PaginatedRequestCommand cmd)
         {
             var peopleResult = this.peopleService.GetAll(cmd.PageIndex, cmd.PageSize);
@@ -58,9 +58,10 @@ namespace RestPOC.API.Controllers
         }
 
         [Authorize]
-        public PersonDto PutPerson(int id, PersonRequestModel requestModel)
-        {
+        public PersonDto PutPerson(int id, PersonRequestModel requestModel) {
+            
             var person = Mapper.Map<PersonRequestModel, Person>(requestModel);
+            person.Id = id;
             var personResult = this.peopleService.UpdateUser(person);
             if (!personResult.IsOK)
             {

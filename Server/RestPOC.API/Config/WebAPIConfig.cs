@@ -23,7 +23,7 @@ namespace RestPOC.API.Config
         {
             // Message Handlers
             config.MessageHandlers.Add(new RequireHttpsMessageHandler());
-            config.MessageHandlers.Add(new BasicAuthMessageHandler());
+            config.MessageHandlers.Add(new BasicAndApiKeyAuthMessageHandler());
 
             // Formatters
             ConfigureFormatters(config.Formatters);

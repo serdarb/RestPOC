@@ -11,7 +11,6 @@
         OperationResult<Person> AddNewUser(Person person);
         // User Role
         OperationResult<Person> UpdateUser(Person person);
-        
 
         // SuperUser Role
         OperationResult<PaginatedList<Person>> GetAll(int pageIndex, int pageSize);
